@@ -65,10 +65,12 @@ and P.model <> P1.model
 
 QUERY 3
 a) Find the makers of PC’s with a speed of at least 3.0.
-SELECT MAKER FROM PRODUCT WHERE MODEL IN (SELECT MODEL FROM PC WHERE SPEED>=3.0)
+SELECT MAKER FROM PRODUCT WHERE MODEL IN (SELECT MODEL FROM PC WHERE SPEED>=3.0);
+
 b) Find the printers with the highest price.
-SELECT MODEL FROM PRINTER WHERE PRICE =(SELECT MAX(PRICE) FROM PRINTER) ;
-c) Find the laptops whose speed is slower than that of any PC.
+SELECT MODEL FROM PRINTER WHERE PRICE =(SELECT MAX(PRICE) FROM PRINTER);
+
+c) Find the laptops whose speed is slower than that of any PC
 SELECT MODEL FROM LAPTOP WHERE SPEED <= ALL (SELECT SPEED FROM PC);
 
 d) Find the model number of the item (PC, laptop, or printer) with the highest price.
